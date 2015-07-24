@@ -29,8 +29,8 @@ public class UserDao {
     public boolean login(String userId, String password){
         for(User user: users){
             if(user.getUserId().equalsIgnoreCase(userId) && user.getPassword().equalsIgnoreCase(password)){
-               user.setLogin(true);
-               return true;
+                user.setLogin(true);
+                return true;
             }
         }
         return false;

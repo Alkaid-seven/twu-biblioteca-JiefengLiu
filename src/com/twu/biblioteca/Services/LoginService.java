@@ -23,11 +23,11 @@ public class LoginService {
 
     public boolean isLogin(String userId, String password) throws IOException {
 
-         if(userDao.login(userId, password)){
+        if(userDao.login(userId, password)){
             islogin = true;
             printStream.println("Login success!");
             return true;
-         } else {
+        } else {
             printStream.println("Login failed. Please try again!");
             return false;
         }

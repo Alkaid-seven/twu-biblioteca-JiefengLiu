@@ -1,6 +1,7 @@
-package com.twu.biblioteca.Services;
+package Services;
 
 import com.twu.biblioteca.Dao.UserDao;
+import com.twu.biblioteca.Services.LoginService;
 import com.twu.biblioteca.Modal.User;
 import junit.framework.TestCase;
 import org.junit.After;
@@ -16,7 +17,7 @@ import static org.junit.Assert.*;
 /**
  *
  */
-public class LoginServiceTest extends TestCase {
+public class LoginServiceTest {
 
     private User user1 = new User("001", "testuer1", "crystal@qq.com", "001", "customer");
     private User user2 = new User("002", "testuer2", "crystal@qq.com", "002", "customer");

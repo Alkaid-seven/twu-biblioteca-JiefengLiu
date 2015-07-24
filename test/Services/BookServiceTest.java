@@ -1,4 +1,4 @@
-package com.twu.biblioteca.Services;
+package Services;
 
 import com.twu.biblioteca.Dao.BookDao;
 import com.twu.biblioteca.Modal.Book;
@@ -15,7 +15,7 @@ import com.twu.biblioteca.Services.BookService;
 import static org.junit.Assert.*;
 
 
-public class BookServiceTest extends TestCase {
+public class BookServiceTest {
 
     Book book1 = new Book("0001", "TestBook1", "qq", "2013", true, true);
     Book book2 = new Book("0002", "TestBook2", "ww", "2011", false, true);
@@ -45,8 +45,8 @@ public class BookServiceTest extends TestCase {
 
     @Test
     public void testReturnBook() throws Exception {
-        String bookid[] = {"0001", "0002", "0001", "0005"};
-        boolean result[] = {true, true, false, false};
+        String bookid[] = {"0001", "0001", "0005"};
+        boolean result[] = {true, false, false};
         for(int i=0; i<result.length; i++){
             boolean testreturn= testbook.returnBook(bookid[i]);
             assertEquals(result[i], testreturn);
