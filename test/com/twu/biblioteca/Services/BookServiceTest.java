@@ -3,15 +3,13 @@ package com.twu.biblioteca.Services;
 import com.twu.biblioteca.Dao.BookDao;
 import com.twu.biblioteca.Modal.Book;
 import junit.framework.TestCase;
+import com.twu.biblioteca.Services.BookService;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import com.twu.biblioteca.Services.BookService;
-
 import static org.junit.Assert.*;
 
 

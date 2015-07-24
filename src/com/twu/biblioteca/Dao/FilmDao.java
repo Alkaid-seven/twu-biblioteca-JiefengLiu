@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * 定义 Film 数据CRUD操作。
  */
+
 public class FilmDao {
     private List<Film> films= new ArrayList<Film>();
 

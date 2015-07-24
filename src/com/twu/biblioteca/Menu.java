@@ -3,8 +3,10 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.Controller.*;
 import com.twu.biblioteca.Dao.BookDao;
 import com.twu.biblioteca.Dao.FilmDao;
+import com.twu.biblioteca.Dao.UserDao;
 import com.twu.biblioteca.Services.BookService;
 import com.twu.biblioteca.Services.FilmService;
+import com.twu.biblioteca.Services.UserService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,6 +31,8 @@ public class Menu {
     private BookService bookService = new BookService(bookDao);
     private FilmDao filmDao = new FilmDao();
     private FilmService filmService= new FilmService(filmDao);
+    private UserDao userDao = new UserDao();
+    private UserService userService = new UserService(printStream, bufferedReader, userDao);
 
     private boolean cango = true;
 
@@ -38,6 +42,7 @@ public class Menu {
         commandMap.put("3", new ReturnBooksCommand(printStream, bufferedReader, bookService));
         commandMap.put("4", new ListFilmsCommand(printStream, filmService));
         commandMap.put("5", new CheckoutFilmCommand(printStream, bufferedReader, filmService));
+        commandMap.put("6", new UserInfoCommand(printStream, userService));
     }
 
     public void start() throws IOException {

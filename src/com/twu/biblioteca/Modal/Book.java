@@ -3,6 +3,7 @@ package com.twu.biblioteca.Modal;
 /**
  * 定义 Book 数据结构；
  */
+
 public class Book {
     private String bookId;
     private String title;

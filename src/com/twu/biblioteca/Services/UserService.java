@@ -1,21 +1,24 @@
 package com.twu.biblioteca.Services;
 
 import com.twu.biblioteca.Dao.UserDao;
+import com.twu.biblioteca.Modal.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintStream;
 
 /**
- * 用户登录。
+ * 用户登录，用户信息展示。
  */
-public class LoginService {
+
+public class UserService {
     private UserDao userDao;
     private PrintStream printStream;
     private BufferedReader reader;
     private boolean islogin = false;
+    private String fmt = "%1$-20s %2$-20s %3$20s%n";
 
-    public LoginService(PrintStream printStream, BufferedReader reader, UserDao userDao) {
+    public UserService(PrintStream printStream, BufferedReader reader, UserDao userDao) {
         this.printStream = printStream;
         this.reader = reader;
         this.userDao = userDao;
@@ -40,6 +43,21 @@ public class LoginService {
             printStream.println("Please login first");
             return false;
         }
-
     }
+
+    private void printHeader(PrintStream printStream) {
+        printStream.format(fmt, "User Name", "Email Address", "Phone Number");
+        printStream.format(fmt, "---------", "-------------", "------------");
+    }
+
+    public void getInfo(PrintStream printStream){
+        User user = userDao.getInfo();
+        if (user != null){
+            printHeader(printStream);
+            printStream.format(fmt, user.getName(), user.getEmail(), user.getPhone());
+        }else{
+            printStream.println("You have no access to see the information!");
+        }
+    }
+
 }

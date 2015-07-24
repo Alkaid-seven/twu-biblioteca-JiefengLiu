@@ -1,20 +1,23 @@
 package com.twu.biblioteca.Modal;
 
 /**
- * Created by songyang on 10/5/14.
+ * 定义 User 数据结构。
  */
+
 public class User {
     private String name;
     private String userId;
     private String email;
+    private String phone;
     private String password;
     private String role;
     private boolean isLogin = false;
 
-    public User(String userId, String name, String email, String password, String role) {
+    public User(String userId, String name, String email, String phone, String password, String role) {
         this.userId = userId;
         this.name = name;
         this.email = email;
+        this.phone = phone;
         this.password = password;
         this.role= role;
     }
@@ -57,6 +60,14 @@ public class User {
 
     public String getPrivilege(){
         return role;
+    }
+
+    public void setPhone(String phone){
+        this.phone = phone;
+    }
+
+    public  String getPhone(){
+        return phone;
     }
 
     public boolean isLogin() {
